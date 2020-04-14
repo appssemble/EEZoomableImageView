@@ -106,6 +106,7 @@ public class PinchZoomHandler {
     var maxZoomScale: CGFloat = PinchZoomHandlerConstants.kMaxZoomScaleDefaultValue
     var resetAnimationDuration = PinchZoomHandlerConstants.kResetAnimationDurationDefaultValue
     var isZoomingActive: Bool = PinchZoomHandlerConstants.kIsZoomingActiveDefaultValue
+    public var isEnabled = true
     weak var delegate: ZoomingDelegate?
     weak var sourceImageView: UIImageView?
     
@@ -134,7 +135,7 @@ public class PinchZoomHandler {
     
     @objc private func handlePinchGesture(pinch: UIPinchGestureRecognizer) {
         
-        guard let pinchableImageView = sourceImageView else { return }
+        guard isEnabled, let pinchableImageView = sourceImageView else { return }
         handlePinchMovement(pinchGesture: pinch, sourceImageView: pinchableImageView)
     }
     
