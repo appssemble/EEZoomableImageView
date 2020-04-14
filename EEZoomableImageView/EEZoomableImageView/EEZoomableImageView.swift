@@ -10,7 +10,7 @@ import UIKit
 
 open class EEZoomableImageView: UIImageView {
     
-    private var pinchZoomHandler: PinchZoomHandler!
+    public var pinchZoomHandler: PinchZoomHandler!
     
     // Public Configurables
     
@@ -23,7 +23,7 @@ open class EEZoomableImageView: UIImageView {
     }
     
     // Minimum Scale of ImageView
-    var minZoomScale: CGFloat {
+    public var minZoomScale: CGFloat {
         get {
             return pinchZoomHandler.minZoomScale
         } set {
@@ -32,7 +32,7 @@ open class EEZoomableImageView: UIImageView {
     }
     
     // Maximum Scale of ImageView
-    var maxZoomScale: CGFloat {
+    public var maxZoomScale: CGFloat {
         get {
             return pinchZoomHandler.maxZoomScale
         } set {
@@ -99,7 +99,7 @@ private struct PinchZoomHandlerConstants {
     fileprivate static let kIsZoomingActiveDefaultValue: Bool = false
 }
 
-fileprivate class PinchZoomHandler {
+public class PinchZoomHandler {
     
     // Configurable
     var minZoomScale: CGFloat = PinchZoomHandlerConstants.kMinZoomScaleDefaultValue
